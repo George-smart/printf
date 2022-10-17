@@ -1,6 +1,13 @@
 #include "main.h"
 
 /**
+ * check_format - check for valid specifier
+ * 
+*/
+
+int (*check_format_func(const))
+
+/**
  * _printf - Receives the main string and all the necessary parameters to
  * print a formated string
  * @format: the input string
@@ -26,12 +33,10 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 	va_list arg_list;
+	int counter = 0;
 
 	va_start(arg_list, format);
-
-/*This is where the logic is to be implemented*/
-
-
+	counter = check_format_func(format, arg_list, funcs);
 	va_end(arg_list);
 	return (printed_chars);
 }

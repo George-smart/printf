@@ -19,6 +19,7 @@ typedef struct typ_print
 
 int _printf(const char *format, ...);
 int _putchar(char);
+int check_format_func(const char *format, va_list, func);
 int print_char(va_list);
 int print_str(va_list);
 int print_percent(va_list);
