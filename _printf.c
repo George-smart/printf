@@ -2,7 +2,7 @@
 
 /**
  * check_format - check for valid specifier
- * 
+ *
 */
 
 int (*check_format_func(const))

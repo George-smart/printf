@@ -29,7 +29,7 @@ int check_format_func(const char *format, va_list, func)
         else
         {
             // loop through the specifier stored in func array struct
-            for(j = 0; funcs[j].ident; j++) 
+            for(j = 0; funcs[j].ident; j++)
             {
                 // check if the string character equals the specifier
                 if (format[i + 1] == funcs[j].ident[k])
