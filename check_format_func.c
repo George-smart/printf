@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_match_func - match format with function format
+ * check_format_func - match format with function format
  * @format: It's a character string
  * @list: the list of arguments the function_printf is receiving
  * Return: the number of character the function is printing
@@ -27,14 +27,14 @@ int check_format_func(const char *format, va_list, func)
         }
         else
         {
-            // loop through the specifier stored in st_format array struct
-            for(j = 0; st_format[j].fmt; j++) 
+            // loop through the specifier stored in func array struct
+            for(j = 0; funcs[j].ident; j++) 
             {
                 // check if the string character equals the specifier
-                if (format[i + 1] == st_format[j].fmt[k])
+                if (format[i + 1] == funcs[j].ident[k])
                 {
-                    // call the st_format struct funct
-                    fn = st_format[j].func(list); /* This line of code calls the functions in the struct array */
+                    // call the func struct funct
+                    fn = funcs[j].func(list); /* This line of code calls the functions in the func struct array */
                     if (fn == -1)
                         return -1;
                     counter += fn;
@@ -43,7 +43,7 @@ int check_format_func(const char *format, va_list, func)
                 }
             }
             // check if the st_format.fmt is Null and if the character specificer is not empty string
-            if (st_format[j].fmt == NULL && format[i + 1] != ' ')
+            if (funcs[j].ident == NULL && format[i + 1] != ' ')
             {
                 // check if the character is not 0
                 if (format[i + 1] != 0)
