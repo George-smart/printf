@@ -63,10 +63,17 @@ int print_percent(__attribute__((unused)) va_list val)
  */
 int print_rev(va_list val)
 {
-	int cnt;
-
-
-	cnt = 0;
+	int cnt, i;
+	char *str;
+	
+	str = (va_arg(val, char *));
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i] != 0; i++)
+	{
+		_putchar(str[i]);
+		cnt++;
+	}
 	return (cnt);
 }
 
@@ -80,12 +87,21 @@ int print_rev(va_list val)
  */
 int rot13(va_list val)
 {
-	int cnt;
-	char *input, *output;
+	int cnt, i;
+/*	char *input, *output;
 
 	input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
-	cnt = 0;
+*/
+	char *str;
+	
+	str = (va_arg(val, char *));
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i] != 0; i++)
+	{
+		_putchar(str[i]);
+		cnt++;
+	}
 	return (cnt);
 }
