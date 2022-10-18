@@ -4,7 +4,8 @@
  * print_char - Receives a value expected to be a single character
  * and prints out the single character
  * @val: input value
- * Return: always 1 on success.
+ * Return: On success: total count of the characters printed
+ * On failure: -1
  */
 int print_char(va_list val)
 {
@@ -42,7 +43,8 @@ int print_str(va_list val)
 /**
  * print_percent - prints out the special character "%"
  * @val: the input
- * Return: 1 on success
+ * Return: On success: total count of the characters printed
+ * On failure: -1
  */
 
 int print_percent(__attribute__((unused)) va_list val)
