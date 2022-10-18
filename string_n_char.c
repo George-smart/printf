@@ -48,7 +48,7 @@ int print_str(va_list val)
  * On failure: -1
  */
 
-int print_percent(__attribute__((unused)) va_list val)
+int print_percent(__attribute__((unused))va_list val)
 {
 	_putchar('%');
 	return (1);
