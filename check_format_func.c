@@ -42,7 +42,7 @@ int check_format_func(const char *format, va_list list, typ funcs[])
 					/* This line of code calls the functions in the func struct array */
 					fn = funcs[j].func(list);
 					if (fn == -1)
-						return -1;
+						return (-1);
 					counter += fn;
 					i++;
 					break;
@@ -65,7 +65,7 @@ int check_format_func(const char *format, va_list list, typ funcs[])
 			}
 		}
 	}
-	// Check if the format is null
+	/* Check if the format is null*/
 	if (format == NULL)
 		return (-1);
 	return (counter);
