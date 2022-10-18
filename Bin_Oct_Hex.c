@@ -1,20 +1,37 @@
 #include "main.h"
 
 /**
+  * print_number - Prints any integer with putchar
+  * @n: Number to prints
+  * @div: divisor
+  * Return: Nothing
+  */
+int print_number(unsigned int n, unsigned int div)
+{
+ int cnt = 0;
+
+	if (n / div)
+		print_number(n / div, div);
+
+	cnt += _putchar(n % div + '0');
+	
+	return (cnt);
+}
+
+/**
  * print_bin - Receives the main string and all the necessary parameters to
  * print a formated string
- * @val: the input string
+ * @val: the input argument
  * Return: On success: total count of the characters printed
  * On failure: -1
  */
 
 int print_bin(va_list val)
 {
-	int cnt, num = va_arg(val, int);
+	int cnt;
+	unsigned int num = va_arg(val, unsigned int), div = 2;
 
-	cnt = 0;
-	if (num > 0)
-		return (num);
+	cnt = print_number(num, div);
 	return (cnt);
 }
 
@@ -28,11 +45,10 @@ int print_bin(va_list val)
 
 int print_octal(va_list val)
 {
-	int cnt, num = va_arg(val, int);
+	int cnt;
+	unsigned int num = va_arg(val, unsigned int), div = 8;
 
-	cnt = 0;
-	if (num > 0)
-		return (num);
+	cnt = print_number(num, div);
 	return (cnt);
 }
 
