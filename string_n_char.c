@@ -27,7 +27,7 @@ int print_str(va_list val)
 {
 	int cnt, i;
 	char *str;
-	
+
 	str = (va_arg(val, char *));
 	if (str == NULL)
 		str = "(null)";
@@ -65,7 +65,7 @@ int print_rev(va_list val)
 {
 	int cnt, i;
 	char *str;
-	
+
 	str = (va_arg(val, char *));
 	if (str == NULL)
 		str = "(null)";
@@ -88,13 +88,14 @@ int print_rev(va_list val)
 int rot13(va_list val)
 {
 	int cnt, i;
-/*	char *input, *output;
-
-	input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+/*
+*char *input, *output;
+*
+*	input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+*	output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 */
 	char *str;
-	
+
 	str = (va_arg(val, char *));
 	if (str == NULL)
 		str = "(null)";
