@@ -3,7 +3,7 @@
  * check_format_func - match format with function format
  * @format: It's a character string
  * @list: the list of arguments the function_printf is receiving
- * @func: The function that holds all the format specifier.
+ * @funcs: The function that holds all the format specifier.
  * Return: the number of character the function is printing
  */
 
