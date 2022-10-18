@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int printed_chars;
+	int printed_chars = 0;
 	typ funcs[] = {
 		{"c", print_char},
 		{"s", print_str},
