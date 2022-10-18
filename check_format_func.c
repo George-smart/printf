@@ -12,7 +12,7 @@
  * This is the function that finds the match between the char ("c","s","d","i", "%") in struct "funcs" and the "format" string. and also if there is not match it will print the % and the next character that is different to the ones in the struct
  */
 
-int check_format_func(const char *format, va_list list, typ funcs[])
+int check_format_func(const char *format, va_list list, funcs)
 {
 	int counter = 0, i = 0, j, k = 0, fn = 0;
 
