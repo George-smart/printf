@@ -20,7 +20,7 @@ int check_format_func(const char *format, va_list list, typ funcs[])
 		}
 		else
 		{
-			for (j = 0; funcs[j].ident; j++)
+			for (j = 0; funcs[j].ident != NULL; j++)
 			{
 				if (format[i + 1] == funcs[j].ident[k])
 				{
