@@ -10,7 +10,7 @@
 int check_format_func(const char *format, va_list list, typ funcs[])
 {
 	int counter = 0, i = 0, j, k = 0, fn = 0;
-	
+
 	for (i = 0; format && format[i] != 0; i++)
 	{
 		if (format[i] != '%')
