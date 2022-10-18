@@ -10,9 +10,11 @@
 
 int print_bin(va_list val)
 {
-	int cnt;
+	int cnt, num = va_arg(val, int);
 
 	cnt = 0;
+	if (num > 0)
+		return (num);
 	return (cnt);
 }
 
@@ -26,9 +28,11 @@ int print_bin(va_list val)
 
 int print_octal(va_list val)
 {
-	int cnt;
+	int cnt, num = va_arg(val, int);
 
 	cnt = 0;
+	if (num > 0)
+		return (num);
 	return (cnt);
 }
 
@@ -41,9 +45,11 @@ int print_octal(va_list val)
  */
 int print_hex(va_list val)
 {
-	int cnt;
+	int cnt, num = va_arg(val, int);
 
 	cnt = 0;
+	if (num > 0)
+		return (num);
 	return (cnt);
 }
 
@@ -56,8 +62,10 @@ int print_hex(va_list val)
  */
 int print_heX(va_list val)
 {
-	int cnt;
+	int cnt, num = va_arg(val, int);
 
 	cnt = 0;
+	if (num > 0)
+		return (num);
 	return (cnt);
 }

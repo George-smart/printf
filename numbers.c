@@ -1,11 +1,12 @@
 #include "main.h"
 
+
 /**
-  * print_number - Prints any integer with putchar
-  * @n: Number to prints
-  *
-  * Return: Nothing
-  */
+ * print_number - Prints any integer with putchar
+ * @n: Number to prints
+ *
+ * Return: Nothing
+ */
 int print_number(int n)
 {
 	unsigned int x, cnt = 0;
@@ -52,14 +53,16 @@ int print_int(va_list val)
  */
 int print_num(va_list val)
 {
-	int cnt;
+	int cnt, num = va_arg(val, int);
 
 	cnt = 0;
+	if (num > 0)
+		return (num);
 	return (cnt);
 }
 
 /**
- * unsigned_integer - Recieves an expected value of unsigned int
+ * unsigned_integer - Receives the main string and all the necessary parameters to
  * print a formated string
  * @val: the input string
  * Return: On success: total count of the characters printed
@@ -67,8 +70,10 @@ int print_num(va_list val)
  */
 int unsigned_integer(va_list val)
 {
-	int cnt;
+	int cnt, num = va_arg(val, int);
 
 	cnt = 0;
+	if (num > 0)
+		return (num);
 	return (cnt);
 }
