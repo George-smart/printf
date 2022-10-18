@@ -28,7 +28,7 @@ int print_str(va_list val)
 	int cnt, i;
 	char *str;
 	
-	str = (va_arg(val char *));
+	str = (va_arg(val, char *));
 	if (str == NULL)
 		str = "(null)";
 	for (i = 0; str[i] != 0; i++)
