@@ -31,7 +31,7 @@ int print_num(va_list val)
 }
 
 /**
- * unsigned_integer - Receives the main string and all the necessary parameters to
+ * unsigned_integer - Recieves an expected value of unsigned int
  * print a formated string
  * @val: the input string
  * Return: On success: total count of the characters printed
