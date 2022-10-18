@@ -4,15 +4,15 @@
  * print_char - Receives a value expected to be a single character
  * and prints out the single character
  * @val: input value
- * Return: On success: total count of the characters printed
- * On failure: -1
+ * Return: always 1 on success.
  */
 int print_char(va_list val)
 {
-	int cnt;
+	char c;
 
-	cnt = 0;
-	return (cnt);
+	c = va_arg(val, int);
+	_putchar(c);
+	return (1);
 }
 
 /**
@@ -24,9 +24,16 @@ int print_char(va_list val)
  */
 int print_str(va_list val)
 {
-	int cnt;
-
-	cnt = 0;
+	int cnt, i;
+	char *str;
+	str = (va_arg(val char *));
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i] != 0; i++)
+	{
+		_putchar(str[i]);
+		cnt++;
+	}
 	return (cnt);
 }
 
@@ -35,16 +42,13 @@ int print_str(va_list val)
 /**
  * print_percent - prints out the special character "%"
  * @val: the input
- * Return: On success: total count of the characters printed
- * On failure: -1
+ * Return: 1 on success
  */
 
-int print_percent(va_list val)
+int print_percent(__attribute__((unused)) va_list val)
 {
-	int cnt;
-
-	cnt = 0;
-	return (cnt);
+	_putchar('%');
+	return (1);
 }
 
 /**

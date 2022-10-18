@@ -43,7 +43,7 @@ int check_format_func(const char *format, va_list list, typ funcs[])
 					break;
 				}
 			}
-			// check if the st_format.fmt is Null and if the character specificer is not empty string
+			// check if the func.ident is Null and if the character specificer is not empty string
 			if (funcs[j].ident == NULL && format[i + 1] != ' ')
 			{
 				// check if the character is not 0
