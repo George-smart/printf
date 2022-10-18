@@ -11,7 +11,7 @@ int print_char(va_list val)
 {
 	char c;
 
-	c = va_arg(val, int);
+	c = (va_arg(val, int));
 	_putchar(c);
 	return (1);
 }
@@ -27,6 +27,7 @@ int print_str(va_list val)
 {
 	int cnt, i;
 	char *str;
+	
 	str = (va_arg(val char *));
 	if (str == NULL)
 		str = "(null)";
