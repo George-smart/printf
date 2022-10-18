@@ -9,33 +9,38 @@
  */
 
 /**
- * This is the function that finds the match between the char ("c","s","d","i", "%") in struct "funcs" and the "format" string. and also if there is not match it will print the % and the next character that is different to the ones in the struct
+ * This is the function that finds the match
+ * between the char ("c","s","d","i", "%")
+ * in struct "funcs" and the "format" string.
+ * and also if there is not match it will print the %
+ * and the next character that is different to the ones in the struct
  */
 
 int check_format_func(const char *format, va_list list, typ funcs[])
 {
 	int counter = 0, i = 0, j, k = 0, fn = 0;
 
-	// Loop through the string format
-	for(i = 0; format && format[i] != 0; i++)
+	/* Loop through the string format*/
+	for (i = 0; format && format[i] != 0; i++)
 	{
-		// check if the string contains % character
+		/* check if the string contains % character*/
 		if (format[i] != '%')
 		{
-			// printing the string without specifier
+			/* printing the string without specifier*/
 			_putchar(format[i]);
 			counter += 1;
 		}
 		else
 		{
-			// loop through the specifier stored in func array struct
-			for(j = 0; funcs[j].ident; j++)
+			/* loop through the specifier stored in func array struct*/
+			for (j = 0; funcs[j].ident; j++)
 			{
-				// check if the string character equals the specifier
+				/* check if the string character equals the specifier*/
 				if (format[i + 1] == funcs[j].ident[k])
 				{
-					// call the func struct funct
-					fn = funcs[j].func(list); /* This line of code calls the functions in the func struct array */
+					/* call the func struct funct*/
+					/* This line of code calls the functions in the func struct array */
+					fn = funcs[j].func(list);
 					if (fn == -1)
 						return -1;
 					counter += fn;
@@ -43,13 +48,13 @@ int check_format_func(const char *format, va_list list, typ funcs[])
 					break;
 				}
 			}
-			// check if the func.ident is Null and if the character specificer is not empty string
+			/* check if the func.ident is Null and if the character specificer is not empty string*/
 			if (funcs[j].ident == NULL && format[i + 1] != ' ')
 			{
-				// check if the character is not 0
+				/* check if the character is not 0*/
 				if (format[i + 1] != 0)
 				{
-					// print the without specificer
+					/* print the without specificer*/
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
 					counter += 2;
