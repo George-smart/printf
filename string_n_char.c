@@ -7,15 +7,11 @@
  * Return: On success: total count of the characters printed
  * On failure: -1
  */
-int print_char(va_list val)
+int print_char(va_list list)
 {
-	char c;
-
-	c = (char)va_arg(val, int);
-	_putchar(c);
+	_putchar(va_arg(list, int));
 	return (1);
 }
-
 /**
  * print_str - Receives a value expected to be a string
  * print a formated string
@@ -23,21 +19,19 @@ int print_char(va_list val)
  * Return: On success: total count of the characters printed
  * On failure: -1
  */
-int print_str(va_list val)
+int print_string(va_list list)
 {
-	int cnt, i;
+	int i;
 	char *str;
 
-	str = (va_arg(val, char *));
+	str = va_arg(list, char *);
 	if (str == NULL)
 		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
-	{
 		_putchar(str[i]);
-		cnt++;
-	}
-	return (cnt);
+	return (i);
 }
+
 
 
 
