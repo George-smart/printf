@@ -7,9 +7,9 @@
  * Return: On success: total count of the characters printed
  * On failure: -1
  */
-int print_char(va_list list)
+int print_char(va_list val)
 {
-	_putchar(va_arg(list, int));
+	_putchar(va_arg(val, int));
 	return (1);
 }
 /**
@@ -19,12 +19,12 @@ int print_char(va_list list)
  * Return: On success: total count of the characters printed
  * On failure: -1
  */
-int print_string(va_list list)
+int print_str(va_list val)
 {
 	int i;
 	char *str;
 
-	str = va_arg(list, char *);
+	str = va_arg(val, char *);
 	if (str == NULL)
 		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
