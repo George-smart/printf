@@ -9,10 +9,10 @@
 
 int check_format_func(const char *format, va_list list, typ funcs[])
 {
-	int i, j, r_val, printed_chars;
+	int i, j, fn, count;
 
-	printed_chars = 0;
-	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
+	count = 0;
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%') /*Checks for format specifiers*/
 		{
@@ -21,10 +21,10 @@ int check_format_func(const char *format, va_list list, typ funcs[])
 			{
 				if (format[i + 1] == funcs[j].ident[0])
 				{
-					r_val = funcs[j].func(list);
-					if (r_val == -1)
+					fn = funcs[j].func(list);
+					if (fn == -1)
 						return (-1);
-					printed_chars += r_val;
+					count += fn;
 					break;
 				}
 			}
@@ -34,18 +34,18 @@ int check_format_func(const char *format, va_list list, typ funcs[])
 				{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
-					printed_chars = printed_chars + 2;
+					count = count + 2;
 				}
 				else
 					return (-1);
 			}
-			i = i + 1; /*Updating i to skip format symbols*/
+			i = i + 1;
 		}
 		else
 		{
-			_putchar(format[i]); /*call the write function*/
-			printed_chars++;
+			_putchar(format[i]);
+			count++;
 		}
 	}
-	return (printed_chars);
+	return (count);
 }
