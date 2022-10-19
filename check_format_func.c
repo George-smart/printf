@@ -9,44 +9,43 @@
 
 int check_format_func(const char *format, va_list list, typ funcs[])
 {
-	int counter = 0, i = 0, j, k = 0, fn = 0;
+	int i, j, r_val, printed_chars;
 
-	for (i = 0; format && format[i] != 0; i++)
+	printed_chars = 0;
+	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
 	{
-		if (format[i] != '%')
+		if (format[i] == '%') /*Checks for format specifiers*/
 		{
-			_putchar(format[i]);
-			counter += 1;
-		}
-		else
-		{
+			/*Iterates through struct to find the right func*/
 			for (j = 0; funcs[j].ident != NULL; j++)
 			{
-				if (format[i + 1] == funcs[j].ident[k])
+				if (format[i + 1] == funcs[j].ident[0])
 				{
-					fn = funcs[j].func(list);
-					if (fn == -1)
+					r_val = funcs[j].func(list);
+					if (r_val == -1)
 						return (-1);
-					counter += fn;
-					i++;
+					printed_chars += r_val;
 					break;
 				}
 			}
 			if (funcs[j].ident == NULL && format[i + 1] != ' ')
 			{
-				if (format[i + 1] != 0)
+				if (format[i + 1] != '\0')
 				{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
-					counter += 2;
-					i++;
+					printed_chars = printed_chars + 2;
 				}
 				else
 					return (-1);
 			}
+			i = i + 1; /*Updating i to skip format symbols*/
+		}
+		else
+		{
+			_putchar(format[i]); /*call the write function*/
+			printed_chars++;
 		}
 	}
-	if (format == NULL)
-		return (-1);
-	return (counter);
+	return (printed_chars);
 }
