@@ -22,8 +22,9 @@ int print_char(va_list val)
 int print_str(va_list val)
 {
 	int i;
-	char *str = va_arg(val, char *);
-	
+	char *str;
+		
+	str = va_arg(val, char *);
 	if (str == NULL)
 		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
@@ -41,7 +42,7 @@ int print_str(va_list val)
  * On failure: -1
  */
 
-int print_percent(__attribute__((unused))va_list val)
+int print_percent(__attribute__((unused)) va_list val)
 {
 	_putchar('%');
 	return (1);
