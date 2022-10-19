@@ -22,9 +22,8 @@ int print_char(va_list val)
 int print_str(va_list val)
 {
 	int i;
-	char *str;
-
-	str = va_arg(val, char *);
+	char *str = va_arg(val, char *);
+	
 	if (str == NULL)
 		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
