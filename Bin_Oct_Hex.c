@@ -29,10 +29,11 @@ int print_number(unsigned int n, unsigned int div)
 
 int print_bin(va_list val)
 {
-	iunsigned int num;
-	int i, len;
-	char *str;
-	char *rev_str;
+	int cnt;
+	unsigned int num = va_arg(val, unsigned int), div = 8;
+
+	cnt = print_number(num, div);
+	return (cnt);
 
 }
 
